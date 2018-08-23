@@ -1,0 +1,6 @@
+.alertBody {
+    width: 200px;
+    z-index: 9999;
+    position: relative;
+    left: 42%;
+}
