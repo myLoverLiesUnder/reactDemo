@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {Layout} from 'antd';
 import HeaderComponent from '../src/component/Header'
 import {Switch, BrowserRouter as Router} from 'react-router-dom'
-import {routes} from "./route/router";
+import {routes} from "./router/router";
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import { renderRoutes } from 'react-router-config'

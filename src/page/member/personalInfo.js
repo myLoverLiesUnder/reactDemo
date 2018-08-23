@@ -2,18 +2,29 @@ import React from 'react';
 import {Menu, Icon} from 'antd';
 import '../../css/custom.css';
 import {Link} from 'react-router-dom'
-import {routes} from '../../route/router'
+import {routes} from '../../router/router'
+import PropTypes from 'prop-types'
 
 
 export default class personalInfo extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.state = {}
+        this.state = {
+            activeKey: ''
+        }
     }
 
-    handleClick = (e) => {
-        console.log('click ', e);
+    handleClick = (item) => {
+        this.setState({activeKey: item.key})
     };
+
+    componentDidMount() {
+        let pathName = this.context.router.route.location.pathname;
+        let index = '';
+        routes.filter((route) => route.path === pathName)
+            .map((route) => index = route.key);
+        this.setState({activeKey: index})
+    }
 
     render() {
         return (
@@ -25,8 +36,7 @@ export default class personalInfo extends React.Component {
                     <Menu
                         onClick={this.handleClick}
                         style={{width: 168, float: 'left'}}
-                        defaultSelectedKeys={['1']}
-                        mode="inline"
+                        selectedKeys={[this.state.activeKey]}
                     >
                         {
                             routes.filter((route) => route.type === 'loginSuccess')
@@ -40,3 +50,7 @@ export default class personalInfo extends React.Component {
         )
     }
 }
+
+personalInfo.contextTypes = {
+    router: PropTypes.object
+};

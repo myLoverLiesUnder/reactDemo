@@ -19,7 +19,6 @@ const routes = [
         path: '/directory/all',
         text: '直播',
         type: 'main',
-        exact: true,
         component: liveList
     },
     {
@@ -27,7 +26,6 @@ const routes = [
         path: '/directory',
         text: '分类',
         type: 'main',
-        exact: true,
         component: Home
     },
     {
@@ -35,7 +33,6 @@ const routes = [
         path: '/bar',
         text: '鱼吧',
         type: 'main',
-        exact: true,
         component: Home
     },
     {
@@ -43,7 +40,6 @@ const routes = [
         path: '/member/cp',
         text: '我的资料',
         type: 'loginSuccess',
-        exact: true,
         iconType: 'solution',
         component: myInfo
     },
@@ -52,7 +48,6 @@ const routes = [
         path: '/room/follow',
         text: '我的关注',
         type: 'loginSuccess',
-        exact: true,
         iconType: 'heart-o',
         component: myFollow
     },
@@ -61,7 +56,6 @@ const routes = [
         path: '/member/pm',
         text: '站内信',
         type: 'loginSuccess',
-        exact: true,
         iconType: 'mail',
         component: myEmail
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import DirectoryTab from '../../component/directoryTab'
-import {directory} from "../../route/directory"
+import {directory} from "../../router/directory"
 import {getLivesByKey} from "../../axios/api"
 import {Row, Col, Card, Icon} from 'antd'
 

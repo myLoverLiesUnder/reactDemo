@@ -3,7 +3,7 @@ import '../css/Header.css'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Layout, Menu, Dropdown, Icon, Card, Avatar} from 'antd'
-import {routes} from '../route/router'
+import {routes} from '../router/router'
 import logo from '../img/logo.png'
 import LoginModal from "../component/loginModal"
 import RegisterModal from "../component/registerModal"
@@ -81,14 +81,24 @@ class HeaderComponent extends React.Component {
     };
 
     jumpToCp = () => {
-        this.context.router.history.push('/member/cp');
+        this.context.router.history.push('/member/cp', 'cp');
+        this.setState({activeKey: ''})
+    };
+
+    jumpToFollow = () => {
+        this.context.router.history.push('/room/follow', 'follow');
+        this.setState({activeKey: ''})
+    };
+
+    jumpToPm = () => {
+        this.context.router.history.push('/member/pm', 'pm');
         this.setState({activeKey: ''})
     };
 
     componentDidMount() {
         let pathName = this.context.router.route.location.pathname;
         let index = '';
-        routes.filter((route) => route.link === pathName)
+        routes.filter((route) => route.path === pathName)
             .map((route) => index = route.key);
         if (pathName === '/') {
             index = routes[0].key
@@ -100,7 +110,7 @@ class HeaderComponent extends React.Component {
     componentWillReceiveProps() {
         let history = this.context.router.history.location.pathname;
         let historyIndex = '';
-        routes.filter((route) => route.link === history)
+        routes.filter((route) => route.path === history)
             .map((route) => historyIndex = route.key);
         this.setState({activeKey: historyIndex})
     }
@@ -113,7 +123,8 @@ class HeaderComponent extends React.Component {
         const menu = (
             <div>
                 <Card title="我的资料" extra={<a onClick={this.logout}>登出</a>} style={{width: 300}}
-                      actions={[<a onClick={this.jumpToCp}>个人中心</a>, <a>我的关注</a>, <a>站内信</a>]}>
+                      actions={[<a onClick={this.jumpToCp}>个人中心</a>, <a onClick={this.jumpToFollow}>我的关注</a>,
+                          <a onClick={this.jumpToPm}>站内信</a>]}>
                     <Meta
                         avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>}
                         description=""
