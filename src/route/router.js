@@ -9,53 +9,60 @@ import PersonalInfo from '../page/member/personalInfo'
 const routes = [
     {
         key: 'Home',
-        link: '/home',
+        path: '/home',
         text: '首页',
         type: 'main',
+        exact: true,
         component: Home
     },
     {
         key: 'Live',
-        link: '/directory/all',
+        path: '/directory/all',
         text: '直播',
         type: 'main',
+        exact: true,
         component: liveList
     },
     {
         key: 'directory',
-        link: '/directory',
+        path: '/directory',
         text: '分类',
         type: 'main',
-        component: null
+        exact: true,
+        component: Home
     },
     {
         key: 'bar',
-        link: '/bar',
+        path: '/bar',
         text: '鱼吧',
         type: 'main',
-        component: null
+        exact: true,
+        component: Home
     },
     {
         key: 'cp',
-        link: '/member/cp',
+        path: '/member/cp',
         text: '我的资料',
         type: 'loginSuccess',
+        exact: true,
         iconType: 'solution',
         component: PersonalInfo
     },
     {
         key: 'follow',
-        link: '/room/follow',
+        path: '/room/follow',
         text: '我的关注',
         type: 'loginSuccess',
+        exact: true,
         iconType: 'heart-o',
         component: PersonalInfo
     },
     {
         key: 'pm',
-        link: '/member/pm',
+        path: '/member/pm',
         text: '站内信',
         type: 'loginSuccess',
+        exact: true,
         iconType: 'mail',
         component: PersonalInfo
     }
