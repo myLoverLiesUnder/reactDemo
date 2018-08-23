@@ -1,8 +1,8 @@
 import React from 'react';
 import {Menu, Icon} from 'antd';
 import '../../css/custom.css';
-import {Link, Route, Switch, BrowserRouter as Router} from 'react-router-dom'
-import {routes} from '../../route/route'
+import {Link} from 'react-router-dom'
+import {routes} from '../../route/router'
 
 
 export default class personalInfo extends React.Component {
@@ -30,7 +30,7 @@ export default class personalInfo extends React.Component {
                     >
                         {
                             routes.filter((route) => route.type === 'loginSuccess')
-                                .map((route) => <Menu.Item key={route.key}><Link to={route.link}><Icon
+                                .map((route) => <Menu.Item key={route.key}><Link to={route.path}><Icon
                                     type={route.iconType}/>{route.text}</Link></Menu.Item>)
                         }
                     </Menu>

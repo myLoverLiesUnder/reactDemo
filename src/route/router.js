@@ -3,7 +3,6 @@ import liveList from '../page/liveList/allList'
 import myFollow from '../page/member/personInfo/myFollow'
 import myInfo from '../page/member/personInfo/myInfo'
 import myEmail from '../page/member/personInfo/myEmail'
-import PersonalInfo from '../page/member/personalInfo'
 
 
 const routes = [
@@ -46,7 +45,7 @@ const routes = [
         type: 'loginSuccess',
         exact: true,
         iconType: 'solution',
-        component: PersonalInfo
+        component: myInfo
     },
     {
         key: 'follow',
@@ -55,7 +54,7 @@ const routes = [
         type: 'loginSuccess',
         exact: true,
         iconType: 'heart-o',
-        component: PersonalInfo
+        component: myFollow
     },
     {
         key: 'pm',
@@ -64,7 +63,7 @@ const routes = [
         type: 'loginSuccess',
         exact: true,
         iconType: 'mail',
-        component: PersonalInfo
+        component: myEmail
     }
 ];
 export {routes}

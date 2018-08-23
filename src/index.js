@@ -4,10 +4,11 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import {Layout} from 'antd';
 import HeaderComponent from '../src/component/Header'
-import {Route, Redirect, Switch, BrowserRouter as Router} from 'react-router-dom'
-import {routes} from "./route/route";
+import {Switch, BrowserRouter as Router} from 'react-router-dom'
+import {routes} from "./route/router";
 import {Provider} from 'react-redux';
 import store from './redux/store';
+import { renderRoutes } from 'react-router-config'
 
 
 class Index extends React.Component {
@@ -27,12 +28,7 @@ class Index extends React.Component {
                     <Content style={{padding: '0 50px'}}>
                         <div style={{background: '#fff', padding: 24, minHeight: 280}}>
                             <Switch>
-                                {
-                                    routes.map((route) => <Route exact key={route.key} path={route.link}
-                                                                 component={route.component}/>
-                                    )
-                                }
-                                <Route exact path="/" render={() => <Redirect to={routes[0].link}/>}/>
+                                {renderRoutes(routes)}
                             </Switch>
                         </div>
                     </Content>

@@ -3,7 +3,7 @@ import '../css/Header.css'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Layout, Menu, Dropdown, Icon, Card, Avatar} from 'antd'
-import {routes} from '../route/route'
+import {routes} from '../route/router'
 import logo from '../img/logo.png'
 import LoginModal from "../component/loginModal"
 import RegisterModal from "../component/registerModal"
@@ -147,7 +147,7 @@ class HeaderComponent extends React.Component {
                     {
                         routes.filter((route) => route.type === 'main')
                             .map((route) => <Menu.Item key={route.key}>
-                                    <Link to={route.link}>{route.text}</Link>
+                                    <Link to={route.path}>{route.text}</Link>
                                 </Menu.Item>
                             )
                     }
