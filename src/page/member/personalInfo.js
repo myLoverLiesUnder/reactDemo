@@ -35,9 +35,7 @@ export default class personalInfo extends React.Component {
                         }
                     </Menu>
                 </div>
-                <div className="u-mainbody">
 
-                </div>
             </div>
         )
     }

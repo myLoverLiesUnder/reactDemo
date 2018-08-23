@@ -11,7 +11,9 @@ export default class myFollow extends React.Component {
         return (
             <div>
                 <PersonalInfo/>
-                <h1>站内信</h1>
+                <div className="u-mainbody">
+                    <h1>站内信</h1>
+                </div>
             </div>
         )
     }
