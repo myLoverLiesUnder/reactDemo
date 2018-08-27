@@ -1,4 +1,5 @@
-import Home from '../App'
+import App from '../App'
+import Home from '../page/home'
 import liveList from '../page/liveList/allList'
 import myFollow from '../page/member/personInfo/myFollow'
 import myInfo from '../page/member/personInfo/myInfo'
@@ -26,14 +27,14 @@ const routes = [
         path: '/directory',
         text: '分类',
         type: 'main',
-        component: Home
+        component: App
     },
     {
         key: 'bar',
         path: '/bar',
         text: '鱼吧',
         type: 'main',
-        component: Home
+        component: App
     },
     {
         key: 'cp',

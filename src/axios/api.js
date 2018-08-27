@@ -16,6 +16,13 @@ const register = (data) => {
     })
 };
 
+const getHomeList = () => {
+    return fetch({
+        url: '/home',
+        method: 'get',
+    })
+};
+
 const getLivesByKey = (key) => {
     if (key === 'all') {
         return fetch({
@@ -32,4 +39,4 @@ const getLivesByKey = (key) => {
     }
 };
 
-export {getLivesByKey, login, register}
+export {getLivesByKey, login, register, getHomeList}

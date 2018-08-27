@@ -22,7 +22,6 @@ export default class liveList extends React.Component {
         getLivesByKey(this.state.key).then((res) => {
             this.setState({array: res.data})
         })
-
     }
 
     onChange = (key) => {
