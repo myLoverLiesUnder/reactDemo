@@ -22,6 +22,11 @@ const mapStateToProps = (state) => {
     }
 };
 
+const options = {
+    pure: false
+};
+
+
 const currentUser = localStorage.getItem("currentUser") || "";
 
 
@@ -179,4 +184,4 @@ HeaderComponent.contextTypes = {
     errorMsg: PropTypes.string
 };
 
-export default connect(mapStateToProps)(HeaderComponent);
+export default connect(mapStateToProps, '', '', options)(HeaderComponent);
