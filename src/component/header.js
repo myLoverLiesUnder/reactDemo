@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Header.css'
+import header from '../css/Header.css'
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Layout, Menu, Dropdown, Icon, Card, Avatar} from 'antd'
@@ -140,24 +140,24 @@ class HeaderComponent extends React.Component {
         );
 
         return (
-            <Header className="headerComponent">
-                <img src={logo} className="logo" alt="logo"/>
+            <Header className={header.headerComponent}>
+                <img src={logo} className={header.logo} alt="logo"/>
                 {
-                    user.username ? <div className="loginArea">
+                    user.username ? <div className={header.loginArea}>
                             <Dropdown overlay={menu}>
-                                <a className="login">{user.nickname}<Icon type="down"/></a>
+                                <a className={header.login}>{user.nickname}<Icon type="down"/></a>
                             </Dropdown>
                         </div>
-                        : <div className="loginArea">
-                            <a className="login" onClick={this.showRegisterModal}>注册</a>
-                            <div className="login">|</div>
-                            <a className="login" onClick={this.showLoginModal}>登陆</a>
+                        : <div className={header.loginArea}>
+                            <a className={header.login} onClick={this.showRegisterModal}>注册</a>
+                            <div className={header.login}>|</div>
+                            <a className={header.login} onClick={this.showLoginModal}>登陆</a>
                         </div>}
                 <Menu
                     theme="light"
                     mode="horizontal"
                     selectedKeys={[this.state.activeKey]}
-                    className="headerMenu"
+                    className={header.headerMenu}
                     onClick={this.clickItem}
                 >
                     {

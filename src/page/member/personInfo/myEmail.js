@@ -1,5 +1,6 @@
 import React from 'react';
 import PersonalInfo from '../personalInfo'
+import myEmailCss from '../../../css/custom.css'
 
 export default class myFollow extends React.Component {
     constructor(props, context) {
@@ -11,7 +12,7 @@ export default class myFollow extends React.Component {
         return (
             <div>
                 <PersonalInfo/>
-                <div className="u-mainbody">
+                <div className={myEmailCss.uMainbody}>
                     <h1>站内信</h1>
                 </div>
             </div>

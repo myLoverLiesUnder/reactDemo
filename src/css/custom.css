@@ -1,4 +1,5 @@
-.ant-card-body {
+
+.antCardBody {
     padding: 9px;
     zoom: 1;
 }
@@ -32,30 +33,30 @@
     top: 0;
 }
 
-.login-form-button {
+.loginFormButton {
     width: 100%;
 }
 
-.login-form-forgot {
+.loginFormForgot {
     float: right;
 }
 
 /**
 personalInfo Css Start
  */
-.live-wrap {
+.liveWrap {
     width: 1000px;
     margin: 0 auto 60px;
     padding-top: 30px;
 }
 
-.u-header {
+.uHeader {
     height: 50px;
     margin-bottom: 20px;
     border-bottom: 2px #ebebeb solid;
 }
 
-.u-header h1 {
+.uHeader h1 {
     width: 167px;
     height: 50px;
     font-size: 30px;
@@ -64,7 +65,7 @@ personalInfo Css Start
     text-align: center;
 }
 
-.u-mainbody {
+.uMainbody {
     width: 812px;
     float: left;
     padding-left: 20px;
@@ -89,7 +90,7 @@ Home Css Start
     z-index: 2
 }
 
-.video-area {
+.videoArea {
     position: relative;
     float: left;
     width: 1008px;
@@ -99,10 +100,11 @@ Home Css Start
 
 .items {
     float: right;
-    width: 166px;
+    width: 170px;
     padding: 5px 10px 0;
     height: 605px;
     background: #333;
+    border-radius: 4px;
 }
 
 .items li {
@@ -114,18 +116,56 @@ Home Css Start
 }
 
 .items li .pic {
-    width: 166px;
+    width: 155px;
     height: 94px;
     position: absolute;
     top: 0;
-    left: -50px;
+    left: -42px;
     overflow: hidden;
+    border: 2px solid transparent;
 }
 
-.items li .pic img{
+
+.items li .pic img {
     width: 100%;
     height: 100%;
-    border-radius: 4px;
+    border-radius: 2px;
+}
+
+.txt {
+    display: none;
+    width: 155px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: -42px;
+    border: 2px solid transparent;
+}
+
+.txt:hover {
+    width: 155px;
+    height: 94px;
+    position: absolute;
+    top: 0;
+    left: -42px;
+    overflow: hidden;
+    border: 2px solid #ff6600;
+    border-radius: 2px;
+
+}
+
+.txt span {
+    max-width: 140px;
+    background: #868686;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 24px;
+    margin: 2px 2px 0 0;
+    padding: 0 5px;
+    overflow: hidden;
+    color: #fff;
+    float: right;
+    text-align: right;
+    white-space: nowrap;
 }
 
 /**

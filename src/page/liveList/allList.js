@@ -3,8 +3,7 @@ import DirectoryTab from '../../component/directoryTab'
 import {directory} from "../../router/directory"
 import {getLivesByKey} from "../../axios/api"
 import {Row, Col, Card, Icon} from 'antd'
-
-import '../../css/custom.css'
+import listCss from '../../css/custom.css'
 
 
 export default class liveList extends React.Component {
@@ -45,9 +44,9 @@ export default class liveList extends React.Component {
                                 style={{width: 240}}
                                 cover={<img alt="example" src={item.pic}/>}
                             >
-                                <div className="cardTitle">
-                                    <h3 className="ellipsis">{item.roomname}</h3>
-                                    <span className="tag">{item.gamename}</span>
+                                <div className={listCss.cardTitle}>
+                                    <h3 className={listCss.ellipsis}>{item.roomname}</h3>
+                                    <span className={listCss.tag}>{item.gamename}</span>
                                 </div>
                                 <p style={{fontSize: '12px'}}><Icon type="user"/> {item.nickname}</p>
                             </Card>

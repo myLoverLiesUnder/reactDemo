@@ -1,6 +1,6 @@
 import React from 'react';
 import {Menu, Icon} from 'antd';
-import '../../css/custom.css';
+import psCss from '../../css/custom.css';
 import {Link} from 'react-router-dom'
 import {routes} from '../../router/router'
 import PropTypes from 'prop-types'
@@ -28,11 +28,11 @@ export default class personalInfo extends React.Component {
 
     render() {
         return (
-            <div className="live-wrap">
-                <div className="u-header">
+            <div className={psCss.liveWrap}>
+                <div className={psCss.uHeader}>
                     <h1>个人中心</h1>
                 </div>
-                <div className="u-main">
+                <div className={psCss.uMainbody}>
                     <Menu
                         onClick={this.handleClick}
                         style={{width: 168, float: 'left'}}

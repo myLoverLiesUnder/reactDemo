@@ -4,6 +4,13 @@
     background: #f5f5f5;
 
 }
+
+.logo {
+    margin: 0 24px 16px 0;
+    float: left;
+}
+
+
 .headerMenu{
     background: #f5f5f5;
 }

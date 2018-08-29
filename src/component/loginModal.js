@@ -1,6 +1,6 @@
 import {Form, Icon, Input, Button, Modal} from 'antd';
 import React from 'react';
-import '../css/custom.css'
+import loginCss from '../css/custom.css'
 import {userLogin} from "../redux/actions/loginAction"
 import {connect} from 'react-redux';
 import Alert from '../component/alert'
@@ -100,8 +100,8 @@ class LoginModal extends React.Component {
                             )}
                         </FormItem>
                         <FormItem>
-                            <a className="login-form-forgot" href="">忘记密码?</a>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
+                            <a className={loginCss.loginFormForgot} href="">忘记密码?</a>
+                            <Button type="primary" htmlType="submit" className={loginCss.loginFormButton}>
                                 登陆
                             </Button>
                             没有帐号? <a>五秒注册!</a>

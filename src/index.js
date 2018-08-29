@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import {Layout} from 'antd';
-import HeaderComponent from '../src/component/Header'
+import HeaderComponent from './component/header'
 import {Switch, BrowserRouter as Router} from 'react-router-dom'
 import {routes} from "./router/router";
 import {Provider} from 'react-redux';

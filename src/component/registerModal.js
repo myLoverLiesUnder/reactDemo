@@ -2,6 +2,7 @@ import {Form, Input, Button, Modal} from 'antd';
 import React from 'react';
 import {userRegister} from "../redux/actions/registerAction"
 import {connect} from 'react-redux';
+import loginCss from '../css/custom.css'
 import Alert from '../component/alert'
 
 const FormItem = Form.Item;
@@ -87,7 +88,7 @@ class registerModal extends React.Component {
                             )}
                         </FormItem>
                         <FormItem>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
+                            <Button type="primary" htmlType="submit" className={loginCss.loginFormButton}>
                                 注册
                             </Button>
                             已有帐号? <a href="">立即登录!</a>
