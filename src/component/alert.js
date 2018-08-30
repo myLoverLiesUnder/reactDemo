@@ -12,4 +12,3 @@ const alert = (props) => {
 };
 
 export default alert
-

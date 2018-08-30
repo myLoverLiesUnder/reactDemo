@@ -159,14 +159,15 @@ module.exports = {
                     // in development "style" loader enables hot editing of CSS.
                     {
                         test: /\.(css|less)$/,
-                        exclude:[/node_modules/],
+                        exclude: [/node_modules/],
                         use: [
                             require.resolve('style-loader'),
                             {
                                 loader: require.resolve('css-loader'),
                                 options: {
                                     importLoaders: 1,
-                                    modules: true
+                                    modules: true,
+                                    localIdentName: '[name]_[local]_[hash:base64:5]'
                                 },
 
                             },
@@ -200,7 +201,7 @@ module.exports = {
                     },
                     {
                         test: /\.(css|less)$/,
-                        exclude:[/src/],
+                        exclude: [/src/],
                         use: [
                             require.resolve('style-loader'),
                             {

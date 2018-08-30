@@ -8,7 +8,7 @@ import {Switch, BrowserRouter as Router} from 'react-router-dom'
 import {routes} from "./router/router";
 import {Provider} from 'react-redux';
 import store from './redux/store';
-import { renderRoutes } from 'react-router-config'
+import {renderRoutes} from 'react-router-config'
 
 
 class Index extends React.Component {
@@ -26,7 +26,7 @@ class Index extends React.Component {
                 <Layout className="layout">
                     <HeaderComponent/>
                     <Content style={{padding: '0 50px'}}>
-                        <div style={{background: '#fff', padding: 24, minHeight: 280}}>
+                        <div style={{background: '#fff', padding: 24, minHeight: 280, height: 'auto',overflow:'hidden'}}>
                             <Switch>
                                 {renderRoutes(routes)}
                             </Switch>

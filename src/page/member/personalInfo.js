@@ -32,19 +32,17 @@ export default class personalInfo extends React.Component {
                 <div className={psCss.uHeader}>
                     <h1>个人中心</h1>
                 </div>
-                <div className={psCss.uMainbody}>
-                    <Menu
-                        onClick={this.handleClick}
-                        style={{width: 168, float: 'left'}}
-                        selectedKeys={[this.state.activeKey]}
-                    >
-                        {
-                            routes.filter((route) => route.type === 'loginSuccess')
-                                .map((route) => <Menu.Item key={route.key}><Link to={route.path}><Icon
-                                    type={route.iconType}/>{route.text}</Link></Menu.Item>)
-                        }
-                    </Menu>
-                </div>
+                <Menu
+                    onClick={this.handleClick}
+                    style={{width: 168, float: 'left',border:'transparent'}}
+                    selectedKeys={[this.state.activeKey]}
+                >
+                    {
+                        routes.filter((route) => route.type === 'loginSuccess')
+                            .map((route) => <Menu.Item key={route.key}><Link to={route.path}><Icon
+                                type={route.iconType}/>{route.text}</Link></Menu.Item>)
+                    }
+                </Menu>
 
             </div>
         )
