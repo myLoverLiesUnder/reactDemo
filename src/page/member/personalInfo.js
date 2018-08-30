@@ -15,7 +15,7 @@ export default class personalInfo extends React.Component {
     }
 
     handleClick = (item) => {
-        this.setState({activeKey: item.key})
+        this.setState({activeKey: item.key});
     };
 
     componentDidMount() {
