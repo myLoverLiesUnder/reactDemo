@@ -101,7 +101,7 @@ class HeaderComponent extends React.Component {
     };
 
     componentDidMount() {
-        let pathName = this.context.router.route.location.pathname;
+        let pathName = this.props.pathname;
         let index = '';
         routes.filter((route) => route.path === pathName)
             .map((route) => index = route.key);
@@ -112,8 +112,8 @@ class HeaderComponent extends React.Component {
 
     }
 
-    componentWillReceiveProps() {
-        let history = this.context.router.history.location.pathname;
+    componentWillReceiveProps(nextprops) {
+        let history = nextprops.pathname;
         let historyIndex = '';
         routes.filter((route) => route.path === history)
             .map((route) => historyIndex = route.key);

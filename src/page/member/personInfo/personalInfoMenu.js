@@ -1,12 +1,12 @@
 import React from 'react';
 import {Menu, Icon} from 'antd';
-import psCss from '../../css/custom.css';
+import psCss from '../../../css/custom.css';
 import {Link} from 'react-router-dom'
-import {routes} from '../../router/router'
+import {routes} from '../../../router/router'
 import PropTypes from 'prop-types'
 
 
-export default class personalInfo extends React.Component {
+export default class personalInfoMenu extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -19,14 +19,17 @@ export default class personalInfo extends React.Component {
     };
 
     componentDidMount() {
-        let pathName = this.context.router.route.location.pathname;
+        let pathName = this.props.pathname;
         let index = '';
-        routes.filter((route) => route.path === pathName)
+        let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
+        sub.routes.filter((route) => route.path === pathName)
             .map((route) => index = route.key);
         this.setState({activeKey: index})
     }
 
+
     render() {
+        let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
         return (
             <div className={psCss.liveWrap}>
                 <div className={psCss.uHeader}>
@@ -34,11 +37,11 @@ export default class personalInfo extends React.Component {
                 </div>
                 <Menu
                     onClick={this.handleClick}
-                    style={{width: 168, float: 'left',border:'transparent'}}
+                    style={{width: 168, float: 'left', border: 'transparent'}}
                     selectedKeys={[this.state.activeKey]}
                 >
                     {
-                        routes.filter((route) => route.type === 'loginSuccess')
+                        sub.routes.filter((route) => route.type === 'member')
                             .map((route) => <Menu.Item key={route.key}><Link to={route.path}><Icon
                                 type={route.iconType}/>{route.text}</Link></Menu.Item>)
                     }
@@ -49,6 +52,6 @@ export default class personalInfo extends React.Component {
     }
 }
 
-personalInfo.contextTypes = {
+personalInfoMenu.contextTypes = {
     router: PropTypes.object
 };

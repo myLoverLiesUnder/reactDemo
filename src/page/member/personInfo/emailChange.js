@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class myFollow extends React.Component {
+export default class emailChange extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {}
@@ -9,7 +9,7 @@ export default class myFollow extends React.Component {
     render() {
         return (
             <div>
-                <h1>站内信</h1>
+                emailChange
             </div>
         )
     }
