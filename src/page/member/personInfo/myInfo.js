@@ -3,20 +3,21 @@ import myInfoCss from '../../../css/custom.css'
 import {Icon, Progress} from 'antd'
 import PropTypes from 'prop-types'
 
+
 const currentUser = localStorage.getItem("currentUser") || "";
 
 export default class myInfo extends React.Component {
 
     jumpToPhoneChange = () => {
-        this.context.router.history.push('/member/security/phoneChange', 'phoneChange');
+        this.props.history.push('/member/cp/phoneChange', 'phoneChange');
     };
 
     jumpToPasswordChange = () => {
-        this.context.router.history.push('/member/security/passwordChange', 'passwordChange');
+        this.props.history.push('/member/cp/passwordChange', 'passwordChange');
     };
 
     jumpToEmailChange = () => {
-        this.context.router.history.push('/member/security/emailChange', 'emailChange');
+        this.props.history.push('/member/cp/emailChange', 'emailChange');
     };
 
     render() {
@@ -26,11 +27,10 @@ export default class myInfo extends React.Component {
         }
         return (
             <div>
-
                 <div className={myInfoCss.myInfoHeader}>
-                        <span>
-                            <Icon type='solution'/>
-                        </span>
+                    <span>
+                        <Icon type='solution'/>
+                    </span>
                     <p>我的资料</p>
                 </div>
                 <div className={myInfoCss.myInfoMain}>

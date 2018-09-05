@@ -53,7 +53,8 @@ const routes = [
                 text: '我的资料',
                 type: 'member',
                 iconType: 'solution',
-                component: myInfo
+                component: myInfo,
+                exact:true
             },
             {
                 key: 'follow',
@@ -73,27 +74,30 @@ const routes = [
             },
             {
                 key: 'phoneChange',
-                path: '/member/security/phoneChange',
+                path: '/member/cp/phoneChange',
                 text: '修改手机',
                 type: 'security',
                 iconType: 'mobile',
-                component: phoneChange
+                component: phoneChange,
+                exact:true
             },
             {
                 key: 'passwordChange',
-                path: '/member/security/passwordChange',
+                path: '/member/cp/passwordChange',
                 text: '修改密码',
                 type: 'security',
                 iconType: 'lock',
-                component: passwordChange
+                component: passwordChange,
+                exact:true
             },
             {
                 key: 'emailChange',
-                path: '/member/security/emailChange',
+                path: '/member/cp/emailChange',
                 text: '修改邮箱',
                 type: 'security',
                 iconType: 'mail',
-                component: emailChange
+                component: emailChange,
+                exact:true
             }
         ]
     }

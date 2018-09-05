@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Breadcrumb} from 'antd';
+import breadCss from '../css/breadcrumb.css'
 
 const BreadcrumbComponent = withRouter((props) => {
     const {location} = props;
@@ -20,11 +21,9 @@ const BreadcrumbComponent = withRouter((props) => {
     });
 
     return (
-        <div>
-            <Breadcrumb>
-                {breadcrumbItem}
-            </Breadcrumb>
-        </div>
+        <Breadcrumb className={breadCss.body} separator=">">
+            {breadcrumbItem}
+        </Breadcrumb>
     )
 });
 
