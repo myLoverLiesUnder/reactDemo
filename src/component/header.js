@@ -82,7 +82,8 @@ class HeaderComponent extends React.Component {
         });
         setTimeout(() => {
             this.setState({alertVisible: false})
-        }, 2000)
+        }, 2000);
+        this.context.router.history.push('/home');
     };
 
     jumpToCp = () => {
