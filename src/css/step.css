@@ -1,0 +1,20 @@
+.stepBody {
+    background: #f5f5f5;
+    padding-top: 22px;
+}
+
+.step {
+    height: 50px;
+    margin: 0 auto;
+    width: 730px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.stepContent {
+    padding: 50px 50px 50px 100px;
+}
+
+.stepControlGroup {
+    margin-bottom: 20px;
+}

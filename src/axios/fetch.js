@@ -31,6 +31,7 @@ export function fetch(options) {
                         id: user.id,
                         username: user.username,
                         nickname: user.nickname,
+                        password: user.password
                     };
                     resolve(responseJson);
                 }
