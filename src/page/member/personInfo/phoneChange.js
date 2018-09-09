@@ -61,7 +61,6 @@ export default class phoneChange extends React.Component {
     }
 
     next = () => {
-        console.log(JSON.parse(currentUser))
         let regex = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/;
         if (this.state.current === 0 && password && password === JSON.parse(currentUser).password) {
             const current = this.state.current + 1;
