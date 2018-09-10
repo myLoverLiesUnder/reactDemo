@@ -59,6 +59,15 @@ export function fetch(options) {
                 resolve(newUser);
                 return
             }
+            //方法为修改信息
+            if (options.url === '/user/update' && options.method === "post") {
+                let currentUser = options.data;
+                let filterIndex = users.findIndex(user => user.id === currentUser.id);
+                users.splice(filterIndex, 1, currentUser);
+                localStorage.setItem('users', JSON.stringify(users));
+                resolve(currentUser);
+                return
+            }
             instance(options)
                 .then(response => {
                     resolve(response)
@@ -66,7 +75,6 @@ export function fetch(options) {
                 .catch(error => {
                     reject(error)
                 })
-
         }
     )
 }

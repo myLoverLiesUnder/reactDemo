@@ -2,6 +2,7 @@ import React from 'react';
 import {Steps, Button, Icon, Input} from 'antd';
 import stepCss from '../../../css/step.css'
 import Alert from '../../../component/alert'
+import {userUpdate} from "../../../axios/api"
 
 const Step = Steps.Step;
 
@@ -71,6 +72,7 @@ export default class phoneChange extends React.Component {
             const current = this.state.current + 1;
             this.setState({current});
             localStorage.setItem('currentUser', JSON.stringify({...JSON.parse(currentUser), email: email}));
+            userUpdate({...JSON.parse(currentUser), email: email});
             return
         }
         else {

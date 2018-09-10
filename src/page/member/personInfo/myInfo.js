@@ -3,9 +3,6 @@ import myInfoCss from '../../../css/custom.css'
 import {Icon, Progress} from 'antd'
 import PropTypes from 'prop-types'
 
-
-const currentUser = localStorage.getItem("currentUser") || "";
-
 export default class myInfo extends React.Component {
 
     jumpToPhoneChange = () => {
@@ -21,10 +18,7 @@ export default class myInfo extends React.Component {
     };
 
     render() {
-        let user = '';
-        if (currentUser) {
-            user = JSON.parse(currentUser);
-        }
+        const user = JSON.parse(localStorage.getItem("currentUser")) || "";
         return (
             <div>
                 <div className={myInfoCss.myInfoHeader}>
@@ -68,7 +62,7 @@ export default class myInfo extends React.Component {
                                     <Icon type="mobile"/>
                                 </div>
                                 <div className={myInfoCss.user_check_message}>
-                                    <p>15524590063</p>
+                                    <p>{user.mobile}</p>
                                     <p>您可以享受手机相关的安全及提醒服务</p>
                                 </div>
                                 <a className={myInfoCss.user_check_link} onClick={this.jumpToPhoneChange}>
@@ -92,7 +86,7 @@ export default class myInfo extends React.Component {
                                     <Icon type="mail"/>
                                 </div>
                                 <div className={myInfoCss.user_check_message}>
-                                    <p>100318****@qq.com</p>
+                                    <p>{user.email}</p>
                                     <p>您可以使用邮箱来保障您的帐号安全</p>
                                 </div>
                                 <a className={myInfoCss.user_check_link} onClick={this.jumpToEmailChange}>

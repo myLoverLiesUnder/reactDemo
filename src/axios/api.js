@@ -16,6 +16,14 @@ const register = (data) => {
     })
 };
 
+const userUpdate = (data) => {
+    return fetch({
+        url: '/user/update',
+        method: 'post',
+        data: data
+    })
+};
+
 const getHomeList = () => {
     return fetch({
         url: '/home',
@@ -39,4 +47,4 @@ const getLivesByKey = (key) => {
     }
 };
 
-export {getLivesByKey, login, register, getHomeList}
+export {getLivesByKey, login, register, getHomeList, userUpdate}
