@@ -218,6 +218,28 @@ myInfo Css Start
     display: inline;
 }
 
+.uploadImg {
+    height: 120px;
+    width: 120px;
+    margin-right: 10px;
+    background: #00bcd4bf;
+    position: absolute;
+    float: left;
+    display: none;
+    opacity: 0.8;
+}
+
+.upload {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 40px;
+    color: white;
+}
+
+.upload i {
+    font-size: 30px;
+}
+
 .userImg img {
     height: 120px;
     width: 120px;
@@ -344,7 +366,7 @@ myInfo Css Start
     float: left;
 }
 
-.user_check_detail{
+.user_check_detail {
     width: 340px;
     border-bottom: 1px solid #ececec;
     padding: 25px 0;

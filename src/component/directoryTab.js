@@ -7,8 +7,10 @@ const liveList = (props) => {
     return (
         <Tabs defaultActiveKey="all" onTabClick={props.onChange}>
             {
-                props.directory.filter((item) => item.id === '#' || item.parent === '#')
-                    .map((item) => <TabPane tab={item.text} key={item.key}/>)
+                props.directory.reduce((array, item) => {
+                    return item.id === '#' || item.parent === '#' ?
+                        array.concat(<TabPane tab={item.text} key={item.key}/>) : array
+                }, [])
             }
         </Tabs>
     )

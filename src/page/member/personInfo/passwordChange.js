@@ -96,6 +96,9 @@ export default class phoneChange extends React.Component {
                 <Steps className={stepCss.step} size="small" current={this.state.current}>
                     {steps.map(item => <Step key={item.title} title={item.title}/>)}
                 </Steps>
+                {this.state.alertVisible ? <Alert message={this.state.alertMsg.message} type={this.state.alertMsg.type}
+                                                  onClose={this.alertClose}/> :
+                    null}
                 <div className={stepCss.stepContent}>
                     <div className={stepCss.stepControlGroup}>
                         {steps[this.state.current].content}
@@ -105,9 +108,6 @@ export default class phoneChange extends React.Component {
                         && <Button type="primary" onClick={this.next}>下一步</Button>
                     }
                 </div>
-                {this.state.alertVisible ? <Alert message={this.state.alertMsg.message} type={this.state.alertMsg.type}
-                                                  onClose={this.alertClose}/> :
-                    null}
             </div>
         )
     }

@@ -20,10 +20,10 @@ export default class personalInfoMenu extends React.Component {
 
     componentDidMount() {
         let pathName = this.props.pathname;
-        let index = '';
         let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
-        sub.routes.filter((route) => route.path === pathName)
-            .map((route) => index = route.key);
+        let index = sub.routes.reduce((index, route) => {
+            return route.path === pathName ? index.concat(route.key) : index
+        }, '');
         this.setState({activeKey: index})
     }
 
@@ -41,9 +41,11 @@ export default class personalInfoMenu extends React.Component {
                     selectedKeys={[this.state.activeKey]}
                 >
                     {
-                        sub.routes.filter((route) => route.type === 'member')
-                            .map((route) => <Menu.Item key={route.key}><Link to={route.path}><Icon
-                                type={route.iconType}/>{route.text}</Link></Menu.Item>)
+                        sub.routes.reduce((menuItem, route) => {
+                            return route.type === 'member' ? menuItem.concat(<Menu.Item key={route.key}><Link
+                                to={route.path}><Icon
+                                type={route.iconType}/>{route.text}</Link></Menu.Item>) : menuItem
+                        }, [])
                     }
                 </Menu>
 

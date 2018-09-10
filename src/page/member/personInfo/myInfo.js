@@ -17,6 +17,18 @@ export default class myInfo extends React.Component {
         this.props.history.push('/member/cp/emailChange', 'emailChange');
     };
 
+    hoverEnter = () => {
+        this.refs.upload.style.display = "block"
+    };
+
+    hoverLeave = () => {
+        this.refs.upload.style.display = "none"
+    };
+
+    clickPic = () => {
+        console.log(123)
+    };
+
     render() {
         const user = JSON.parse(localStorage.getItem("currentUser")) || "";
         return (
@@ -30,8 +42,25 @@ export default class myInfo extends React.Component {
                 <div className={myInfoCss.myInfoMain}>
                     <div className={myInfoCss.userInfo}>
                         <div className={myInfoCss.userImg}>
-                            <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="example"/>
+                            <a href=""
+                               onMouseEnter={this.hoverEnter}
+                               onMouseLeave={this.hoverLeave}>
+                                <img src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                                     alt="example"/>
+                            </a>
                         </div>
+                        <a href="" onClick={e => {
+                            e.preventDefault();
+                            this.clickPic()
+                        }}>
+                            <div ref="upload" onMouseEnter={this.hoverEnter}
+                                 onMouseLeave={this.hoverLeave} className={myInfoCss.uploadImg}>
+                                <div className={myInfoCss.upload}>
+                                    <Icon type="form" theme="outlined"/>
+                                    <p>修改头像</p>
+                                </div>
+                            </div>
+                        </a>
                         <div className={myInfoCss.infoLeft}>
                             <div className={myInfoCss.detailInfo}>
                                 <div className={myInfoCss.username}>

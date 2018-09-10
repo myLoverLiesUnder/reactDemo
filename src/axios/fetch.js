@@ -59,7 +59,7 @@ export function fetch(options) {
                 resolve(newUser);
                 return
             }
-            //方法为修改信息
+            //请求为修改信息
             if (options.url === '/user/update' && options.method === "post") {
                 let currentUser = options.data;
                 let filterIndex = users.findIndex(user => user.id === currentUser.id);

@@ -103,9 +103,9 @@ class HeaderComponent extends React.Component {
 
     componentDidMount() {
         let pathName = this.props.pathname;
-        let index = '';
-        routes.filter((route) => route.path === pathName)
-            .map((route) => index = route.key);
+        let index = routes.reduce((index, route) => {
+            return route.path === pathName ? index.concat(route.key) : index
+        }, '');
         if (pathName === '/') {
             index = routes[0].key
         }
@@ -115,9 +115,9 @@ class HeaderComponent extends React.Component {
 
     componentWillReceiveProps(nextprops) {
         let history = nextprops.pathname;
-        let historyIndex = '';
-        routes.filter((route) => route.path === history)
-            .map((route) => historyIndex = route.key);
+        let historyIndex = routes.reduce((index, route) => {
+            return route.path === history ? index.concat(route.key) : index
+        }, '');
         this.setState({activeKey: historyIndex})
     }
 
@@ -162,11 +162,11 @@ class HeaderComponent extends React.Component {
                     onClick={this.clickItem}
                 >
                     {
-                        routes.filter((route) => route.type === 'main')
-                            .map((route) => <Menu.Item key={route.key}>
-                                    <Link to={route.path}>{route.text}</Link>
-                                </Menu.Item>
-                            )
+                        routes.reduce((array, route) => {
+                            return route.type === 'main' ? array.concat(<Menu.Item key={route.key}>
+                                <Link to={route.path}>{route.text}</Link>
+                            </Menu.Item>) : array
+                        }, [])
                     }
                 </Menu>
                 <LoginModal visible={this.state.loginModalVisible} handleCancel={this.handleLoginModalCancel}/>
