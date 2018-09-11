@@ -8,6 +8,7 @@ import phoneChange from '../page/member/personInfo/phoneChange'
 import passwordChange from '../page/member/personInfo/passwordChange'
 import emailChange from '../page/member/personInfo/emailChange'
 import member from '../page/member/index'
+import avatarUpload from '../page/member/personInfo/avatarUpload'
 
 
 const routes = [
@@ -97,6 +98,15 @@ const routes = [
                 type: 'security',
                 iconType: 'mail',
                 component: emailChange,
+                exact:true
+            },
+            {
+                key: 'avatarUpload',
+                path: '/member/cp/avatarUpload',
+                text: '头像上传',
+                type: 'security',
+                iconType: 'smile',
+                component: avatarUpload,
                 exact:true
             }
         ]

@@ -26,7 +26,7 @@ export default class myInfo extends React.Component {
     };
 
     clickPic = () => {
-        console.log(123)
+        this.props.history.push('/member/cp/avatarUpload', 'avatarUpload');
     };
 
     render() {
