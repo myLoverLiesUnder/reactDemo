@@ -18,7 +18,7 @@ module.exports = function () {
                 "nickname": "帕拉瓦丶BOSS"
             },
         ],
-        "home":[
+        "homeList":[
             {
                 "roomid": "1294200",
                 "key": 'online',

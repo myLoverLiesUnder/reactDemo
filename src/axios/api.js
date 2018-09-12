@@ -26,7 +26,7 @@ const userUpdate = (data) => {
 
 const getHomeList = () => {
     return fetch({
-        url: '/home',
+        url: '/homeList',
         method: 'get',
     })
 };

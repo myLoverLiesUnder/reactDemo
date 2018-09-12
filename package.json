@@ -120,5 +120,19 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": {
+    "/homeList": {
+      "target": "http://localhost:3001/",
+      "ws": true
+    },
+    "/lives": {
+      "target": "http://localhost:3001/",
+      "ws": true
+    },
+    "/upload": {
+      "target": "http://jsonplaceholder.typicode.com/posts/",
+      "ws": true,
+      "secure": false
+    }
+  }
 }

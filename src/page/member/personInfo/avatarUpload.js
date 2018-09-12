@@ -44,6 +44,7 @@ export default class AvatarUpload extends React.Component {
 
     render() {
         const imageUrl = this.state.imageUrl;
+        console.log(imageUrl)
 
         const uploadButton = (
             <div style={{margin:'20px'}}>
@@ -65,7 +66,7 @@ export default class AvatarUpload extends React.Component {
                         listType="picture-card"
                         className="avatar-uploader"
                         showUploadList={false}
-                        action="//jsonplaceholder.typicode.com/posts/"
+                        action="/upload"
                         beforeUpload={beforeUpload}
                         onChange={this.handleChange}
                     >
