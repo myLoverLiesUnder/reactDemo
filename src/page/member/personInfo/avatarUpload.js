@@ -43,15 +43,6 @@ export default class AvatarUpload extends React.Component {
     };
 
     render() {
-        const imageUrl = this.state.imageUrl;
-        console.log(imageUrl)
-
-        const uploadButton = (
-            <div style={{margin:'20px'}}>
-                <Icon type={this.state.loading ? 'loading' : 'plus'}/>
-                <div className="ant-upload-text">Upload</div>
-            </div>
-        );
 
         return (
             <div className={avatarCss.avatarMain}>

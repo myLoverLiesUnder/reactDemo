@@ -5,6 +5,11 @@ import PropTypes from 'prop-types'
 
 export default class myInfo extends React.Component {
 
+    jumpToNameChange = () => {
+        this.props.history.push('/member/cp/nameChange', 'nameChange');
+    };
+
+
     jumpToPhoneChange = () => {
         this.props.history.push('/member/cp/phoneChange', 'phoneChange');
     };
@@ -68,7 +73,11 @@ export default class myInfo extends React.Component {
                                         {user.nickname}
                                     </h2>
                                 </div>
-                                <a className={myInfoCss.updateUsername} title="修改昵称">
+                                <a className={myInfoCss.updateUsername} title="修改昵称"
+                                   onClick={e => {
+                                       e.preventDefault();
+                                       this.jumpToNameChange()
+                                   }}>
                                     <Icon type="edit"/>
                                 </a>
                             </div>

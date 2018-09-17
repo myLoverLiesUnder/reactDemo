@@ -10,7 +10,7 @@ export function loginOut() {
     }
 }
 
-function loginSuccess(userInfo) {
+export function loginSuccess(userInfo) {
     return {
         type: LOGIN_SUCCESS,
         userInfo: userInfo

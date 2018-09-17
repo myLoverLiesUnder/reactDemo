@@ -7,6 +7,7 @@ import myEmail from '../page/member/personInfo/myEmail'
 import phoneChange from '../page/member/personInfo/phoneChange'
 import passwordChange from '../page/member/personInfo/passwordChange'
 import emailChange from '../page/member/personInfo/emailChange'
+import nameChange from '../page/member/personInfo/nameChange'
 import member from '../page/member/index'
 import avatarUpload from '../page/member/personInfo/avatarUpload'
 
@@ -72,6 +73,15 @@ const routes = [
                 type: 'member',
                 iconType: 'mail',
                 component: myEmail
+            },
+            {
+                key: 'nameChange',
+                path: '/member/cp/nameChange',
+                text: '修改昵称',
+                type: 'security',
+                iconType: 'mobile',
+                component: nameChange,
+                exact:true
             },
             {
                 key: 'phoneChange',
