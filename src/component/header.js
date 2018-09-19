@@ -1,6 +1,6 @@
 import React from 'react';
 import header from '../css/Header.css'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Layout, Menu, Dropdown, Icon, Card, Avatar} from 'antd'
 import {routes} from '../router/router'
@@ -87,17 +87,17 @@ class HeaderComponent extends React.Component {
     };
 
     jumpToCp = () => {
-        this.context.router.history.push('/member/cp', 'cp');
+        this.props.history.push('/member/cp', 'cp');
         this.setState({activeKey: ''})
     };
 
     jumpToFollow = () => {
-        this.context.router.history.push('/room/follow', 'follow');
+        this.props.history.push('/member/follow', 'follow');
         this.setState({activeKey: ''})
     };
 
     jumpToPm = () => {
-        this.context.router.history.push('/member/pm', 'pm');
+        this.props.history.push('/member/pm', 'pm');
         this.setState({activeKey: ''})
     };
 
@@ -123,7 +123,7 @@ class HeaderComponent extends React.Component {
 
     render() {
         let user = this.props.userInfo;
-        if (currentUser) {
+        if (currentUser && !user.username) {
             user = JSON.parse(currentUser);
         }
         const menu = (
@@ -185,4 +185,4 @@ HeaderComponent.contextTypes = {
     errorMsg: PropTypes.string
 };
 
-export default connect(mapStateToProps, '', '', options)(HeaderComponent);
+export default connect(mapStateToProps, '', '', options)(withRouter(HeaderComponent));

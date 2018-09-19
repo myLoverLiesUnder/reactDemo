@@ -10,7 +10,7 @@ export default class myFollow extends React.Component {
     render() {
         return (
             <div>
-                    <h1>我的关注</h1>
+                <h1>我的关注</h1>
             </div>
         )
     }

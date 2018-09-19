@@ -2,9 +2,17 @@ import React from 'react';
 import {Form, Button, Input} from 'antd';
 import stepCss from '../../../css/step.css'
 import {userUpdate} from "../../../axios/api"
+import {connect} from 'react-redux';
 import {loginSuccess} from "../../../redux/actions/loginAction"
 
 const FormItem = Form.Item;
+
+const mapStateToProps = (state) => {
+    return {
+        userInfo: state.login.userInfo,
+        errorMsg: state.login.errorMsg
+    }
+};
 
 const currentUser = localStorage.getItem("currentUser") || "";
 
@@ -24,7 +32,7 @@ class nameChange extends React.Component {
                     nickname: newNickname
                 }));
                 userUpdate({...JSON.parse(currentUser), nickname: newNickname});
-                loginSuccess({...JSON.parse(currentUser), nickname: newNickname});
+                this.props.dispatch(loginSuccess({...JSON.parse(currentUser), nickname: newNickname}));
                 this.props.history.push('/member/cp', 'cp');
             }
         })
@@ -88,4 +96,4 @@ class nameChange extends React.Component {
     }
 }
 
-export default Form.create()(nameChange)
+export default connect(mapStateToProps)(Form.create()(nameChange));

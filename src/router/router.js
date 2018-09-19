@@ -60,7 +60,7 @@ const routes = [
             },
             {
                 key: 'follow',
-                path: '/room/follow',
+                path: '/member/follow',
                 text: '我的关注',
                 type: 'member',
                 iconType: 'heart-o',

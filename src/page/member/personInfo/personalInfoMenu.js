@@ -27,6 +27,15 @@ export default class personalInfoMenu extends React.Component {
         this.setState({activeKey: index})
     }
 
+    componentWillReceiveProps(nextProps) {
+        let history = nextProps.pathname;
+        let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
+        let historyIndex = sub.routes.reduce((index, route) => {
+            return route.path === history ? index.concat(route.key) : index
+        }, '');
+        this.setState({activeKey: historyIndex});
+    }
+
 
     render() {
         let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
