@@ -2,7 +2,7 @@ import React from 'react'
 import memberCss from '../../css/custom.css'
 import PersonalInfoMenu from './personInfo/personalInfoMenu'
 import BreadCrumbComponent from "../../component/breadcrumb"
-import {withRouter, BrowserRouter as Router, Switch} from 'react-router-dom'
+import {withRouter, Switch} from 'react-router-dom'
 import {routes} from "../../router/router"
 import {renderRoutes} from 'react-router-config'
 
@@ -11,17 +11,15 @@ class memberIndex extends React.Component {
         let sub = routes.filter(route => route.routes && route.routes.length > 0 && route.key === 'member')[0];
         const {location} = this.props;
         return (
-            <Router>
-                <div>
-                    <PersonalInfoMenu pathname={location.pathname}/>
-                    <div className={memberCss.uMainbody}>
-                        <BreadCrumbComponent subRoutes={sub.routes}/>
-                        <Switch>
-                            {renderRoutes(sub.routes)}
-                        </Switch>
-                    </div>
+            <div>
+                <PersonalInfoMenu pathname={location.pathname}/>
+                <div className={memberCss.uMainbody}>
+                    <BreadCrumbComponent subRoutes={sub.routes}/>
+                    <Switch>
+                        {renderRoutes(sub.routes)}
+                    </Switch>
                 </div>
-            </Router>
+            </div>
         )
     }
 }
