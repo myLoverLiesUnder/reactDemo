@@ -13,7 +13,6 @@ let mobile = '';
 
 
 const handelInput = (e,key) => {
-
     if(key==='password'){
         password = e.target.value;
     }
