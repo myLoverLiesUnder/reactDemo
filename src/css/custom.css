@@ -429,14 +429,14 @@ myInfo Css Start
     margin-top: 41px;
 }
 
-.avatarSelect{
+.avatarSelect {
     width: 466px;
     float: left;
     margin-top: 91px;
     padding-left: 90px;
 }
 
-.antUploadText{
+.antUploadText {
     margin: 20px;
 }
 
@@ -444,3 +444,50 @@ myInfo Css Start
 myInfo Css End
  */
 
+/**
+myFollow Css Start
+ */
+.box {
+    padding: 10px;
+    background: #f7f7f7;
+    height: 120px;
+    margin-bottom: 16px;
+}
+
+.fPic {
+    position: relative;
+    float: left;
+}
+
+.fPic img {
+    width: 174px;
+    height: 98px;
+}
+
+.fInfo {
+    padding-left: 10px;
+    font-size: 12px;
+    width: 189px;
+    overflow: hidden;
+    float: left;
+}
+
+.fInfo h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.fInfo p {
+    color: #7e7e7e;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px;
+}
+
+/**
+myFollow Css End
+ */

@@ -41,7 +41,7 @@ export default class liveList extends React.Component {
                         <Col key={item.roomid} span={6}>
                             <Card
                                 hoverable
-                                style={{width: 240}}
+                                style={{width: 240,marginBottom:'20px'}}
                                 cover={<img alt="example" src={item.pic}/>}
                             >
                                 <div className={listCss.cardTitle}>

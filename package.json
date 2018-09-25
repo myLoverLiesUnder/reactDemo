@@ -129,6 +129,10 @@
       "target": "http://localhost:3001/",
       "ws": true
     },
+    "/myFollows": {
+      "target": "http://localhost:3001/",
+      "ws": true
+    },
     "/upload": {
       "target": "http://jsonplaceholder.typicode.com/posts/",
       "ws": true,

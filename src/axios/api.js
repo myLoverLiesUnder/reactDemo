@@ -47,4 +47,11 @@ const getLivesByKey = (key) => {
     }
 };
 
-export {getLivesByKey, login, register, getHomeList, userUpdate}
+const getFollowsList = () => {
+    return fetch({
+        url: '/myFollows',
+        method: 'get',
+    })
+};
+
+export {getLivesByKey, login, register, getHomeList, userUpdate, getFollowsList}

@@ -14,7 +14,7 @@ class memberIndex extends React.Component {
             <div>
                 <PersonalInfoMenu pathname={location.pathname}/>
                 <div className={memberCss.uMainbody}>
-                    <BreadCrumbComponent subRoutes={sub.routes}/>
+                    {location.pathname === '/member/cp' ? <BreadCrumbComponent subRoutes={sub.routes}/> : ''}
                     <Switch>
                         {renderRoutes(sub.routes)}
                     </Switch>
