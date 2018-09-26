@@ -450,7 +450,7 @@ myFollow Css Start
 .box {
     padding: 10px;
     background: #f7f7f7;
-    height: 120px;
+    height: 125px;
     margin-bottom: 16px;
 }
 
@@ -486,6 +486,13 @@ myFollow Css Start
     white-space: nowrap;
     text-overflow: ellipsis;
     line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.cancelFocus a{
+    color: #3399E0;
+    float: right;
+    display: none;
 }
 
 /**
