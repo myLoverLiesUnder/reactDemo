@@ -10,11 +10,9 @@ import RegisterModal from "../component/registerModal"
 import {connect} from 'react-redux'
 import {loginOut} from "../redux/actions/loginAction"
 import Alert from '../component/alert'
+import {directory} from "../router/directory"
 
 const {Header} = Layout;
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 const {Meta} = Card;
 
@@ -38,6 +36,7 @@ class HeaderComponent extends React.Component {
         super(props, context);
         this.state = {
             activeKey: '',
+            directory: directory,
             loginModalVisible: false,
             registerModalVisible: false,
             alertVisible: false,
@@ -104,6 +103,20 @@ class HeaderComponent extends React.Component {
         this.setState({activeKey: ''})
     };
 
+
+    hoverEnter = (key) => {
+        if (key === 'directory') {
+            this.refs.sub.style.display = 'block';
+        }
+    };
+
+    hoverLeave = (key) => {
+        if (key === 'directory') {
+            this.refs.sub.style.display = 'none';
+        }
+    };
+
+
     componentDidMount() {
         let pathName = this.props.pathname;
         let index = routes.reduce((index, route) => {
@@ -129,7 +142,6 @@ class HeaderComponent extends React.Component {
         if (currentUser && !user.username) {
             user = JSON.parse(currentUser);
         }
-        let array = [];
         const menu = (
             <div>
                 <Card title="我的资料" extra={<a onClick={this.logout}>登出</a>} style={{width: 300}}
@@ -143,6 +155,7 @@ class HeaderComponent extends React.Component {
                 </Card>
             </div>
         );
+
 
         return (
             <Header className={header.headerComponent}>
@@ -166,28 +179,33 @@ class HeaderComponent extends React.Component {
                     onClick={this.clickItem}
                 >
                     {
-                        routes.map(route => {
-                            if (route.type === 'main') {
-                                if (route.key !== 'directory') {
-                                    return array.concat(<Menu.Item
-                                        key={route.key}>
-                                        <Link to={route.path}>{route.text}</Link>
-                                    </Menu.Item>)
-                                } else {
-                                    return array.concat(<SubMenu
-                                        title={<span className="submenu-title-wrapper"><Icon type="setting"/>Navigation Three - Submenu</span>}>
-                                        <MenuItemGroup title="Item 1">
-                                            <Menu.Item key="setting:1">Option 1</Menu.Item>
-                                            <Menu.Item key="setting:2">Option 2</Menu.Item>
-                                        </MenuItemGroup>
-                                    </SubMenu>)
-                                }
-                            } else {
-                                return array
-                            }
-                        })
+                        routes.reduce((array, route) => {
+                            return route.type === 'main' ?
+                                array.concat(<Menu.Item key={route.key}
+                                                        onMouseEnter={() => this.hoverEnter(route.key)}
+                                                        onMouseLeave={() => this.hoverLeave(route.key)}>
+                                    <Link to={route.path}>{route.text}</Link>
+                                </Menu.Item>) : array
+                        }, [])
                     }
                 </Menu>
+                <div className={header.sub} ref="sub"
+                     onMouseEnter={() => this.hoverEnter('directory')}
+                     onMouseLeave={() => this.hoverLeave('directory')}>
+                    <div className={header.list}>
+                        <h3>热门分类</h3>
+                        <ul>
+                            {
+                                this.state.directory.reduce((array, item) => {
+                                    return item.id !== '#' ?
+                                        array.concat(<li key={item.key}>
+                                            <a href="">{item.text}</a>
+                                        </li>) : array
+                                }, [])
+                            }
+                        </ul>
+                    </div>
+                </div>
                 <LoginModal visible={this.state.loginModalVisible} handleCancel={this.handleLoginModalCancel}/>
                 <RegisterModal visible={this.state.registerModalVisible} handleCancel={this.handleRegisterModalCancel}/>
                 {this.state.alertVisible ? <Alert message={this.state.alertMsg.message} type={this.state.alertMsg.type}

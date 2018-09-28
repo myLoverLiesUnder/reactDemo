@@ -10,6 +10,7 @@ import emailChange from '../page/member/personInfo/emailChange'
 import nameChange from '../page/member/personInfo/nameChange'
 import member from '../page/member/index'
 import avatarUpload from '../page/member/personInfo/avatarUpload'
+import bar from '../page/bar'
 
 
 const routes = [
@@ -40,7 +41,7 @@ const routes = [
         path: '/bar',
         text: '鱼吧',
         type: 'main',
-        component: App
+        component: bar
     },
     {
         key: 'member',
